@@ -197,7 +197,7 @@ class User extends CI_Controller {
 				}
 				else 
 				{
-					redirect('user/list','refresh');
+					redirect('user/user_list','refresh');
 				}
 
 			}

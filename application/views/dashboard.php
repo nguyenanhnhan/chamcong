@@ -16,8 +16,8 @@
         </div>
         <!-- END PAGE BAR -->
         <!-- BEGIN PAGE TITLE-->
-        <h3 class="page-title"> Dashboard
-            <!-- <small>blank page layout</small> -->
+        <h3 class="page-title"> <?php echo $current_user->first_name.' '.$current_user->last_name ?>
+            <small><?php echo $current_user->email ?></small>
         </h3>
         <!-- END PAGE TITLE-->
         <!-- END PAGE HEADER-->
@@ -36,7 +36,13 @@
                     </div>
                 </div>
                 <div class="portlet-body">
+                    <?php if ($current_user->ip_access != $localIP) { ?>
+                    <div class="alert alert-danger">
+                         <?php echo 'Hệ thống không chấp nhận truy xuất từ IP: '.$localIP; ?> 
+                    </div>
+                    <?php } ?>
                     <form action="<?php echo base_url('work_time/check') ?>" method="POST">
+                        <?php if ($current_user->ip_access == $localIP) { ?>
                         <div class="alert alert-info">
                             Ngày <strong><?php echo date("d/m/Y") ?></strong>
                             <?php if ($check_in == FALSE) {?>
@@ -44,8 +50,8 @@
                             <?php } else { ?>
                             <button type="submit" name="check_time" value="check_out" class="btn btn-primary"> <i class="fa fa-calendar-times-o"></i> Thời gian ra </button>
                             <?php } ?>
-                            
                         </div>
+                        <?php } ?>
                     </form>
                     <div class="table-scrollable">
                         <table class="table table-striped table-hover">

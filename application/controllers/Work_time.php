@@ -26,6 +26,7 @@ class Work_time extends CI_Controller {
 			$this->session->flashdata('message');
 
 			$data['check_in'] = FALSE;
+			$data['localIP'] = file_get_contents('https://api.ipify.org');
 			$date_now = now();
 
 			$where = array (

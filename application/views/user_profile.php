@@ -73,7 +73,7 @@
                             <div class="margiv-top-10">
                                 <button type="submit" class="btn green"> Cập nhật </button>
                                 <!-- <a href="" class="btn green"> Cập nhật </a> -->
-                                <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
+                                <a href="<?php echo base_url('user/user_list') ?>" class="btn default"> Bỏ qua </a>
                             </div>
                         </form>
                     </div>
@@ -89,6 +89,7 @@
                                 <input type="password" name="confirm_password" class="form-control" /> </div>
                             <div class="margin-top-10">
                                 <button class="btn green" type="submit"> Cập nhật </button>
+                                <a href="<?php echo base_url('user/user_list') ?>" class="btn default"> Bỏ qua </a>
                                 <!-- <a href="" class="btn green"> Cập nhật </a> -->
                                 <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
                             </div>

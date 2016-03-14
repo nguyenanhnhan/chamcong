@@ -77,8 +77,8 @@ class Auth extends CI_Controller {
 			// set the flash data error message if there is one
 			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-			$localIP = getHostByName(getHostName());
-			$data['localIP'] = $localIP;
+			// $localIP = getHostByName(getHostName());
+			$data['localIP'] = file_get_contents('https://api.ipify.org');
 
 			$this->load->view('login',$data);
 		}
