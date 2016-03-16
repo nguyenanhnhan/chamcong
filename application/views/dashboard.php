@@ -38,7 +38,8 @@
                 <div class="portlet-body">
                     <?php if ($current_user->ip_access != $localIP) { ?>
                     <div class="alert alert-danger">
-                         <?php echo 'Hệ thống không chấp nhận truy xuất từ IP: '.$localIP; ?> 
+                         <!-- <?php echo 'Hệ thống không chấp nhận truy xuất từ IP: '.$localIP; ?>  -->
+                         <?php echo 'Chấm công không thể thực hiện ở ngoài trường.' ?>
                     </div>
                     <?php } ?>
                     <form action="<?php echo base_url('work_time/check') ?>" method="POST">

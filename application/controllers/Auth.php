@@ -17,11 +17,11 @@ class Auth extends CI_Controller {
 			// redirect to login page
 			redirect('auth/login','refresh');
 		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
-		{
-			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
-		}
+		// elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		// {
+		// 	// redirect them to the home page because they must be an administrator to view this
+		// 	return show_error('You must be an administrator to view this page.');
+		// }
 		else
 		{
 			// set the flash data error message if there is one
@@ -33,10 +33,9 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-
-			$this->_render_page('auth/index', $this->data);
+			redirect('work_time/index','refresh');
+			// $this->_render_page('auth/index', $this->data);
 		}
-
 		
 	}
 
@@ -78,7 +77,7 @@ class Auth extends CI_Controller {
 			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			// $localIP = getHostByName(getHostName());
-			$data['localIP'] = file_get_contents('https://api.ipify.org');
+			$data['localIP'] = $this->input->ip_address(); //file_get_contents('https://api.ipify.org');
 
 			$this->load->view('login',$data);
 		}
@@ -98,6 +97,16 @@ class Auth extends CI_Controller {
 		redirect('auth/login', 'refresh');
 	}
 
+}
+
+function _render_page($view, $data=null, $returnhtml=false)//I think this makes more sense
+{
+
+	$this->viewdata = (empty($data)) ? $this->data: $data;
+
+	$view_html = $this->load->view($view, $this->viewdata, $returnhtml);
+
+	if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
 }
 
 /* End of file Auth.php */
