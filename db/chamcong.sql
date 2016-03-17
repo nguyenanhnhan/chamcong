@@ -11,7 +11,7 @@
  Target Server Version : 50505
  File Encoding         : utf-8
 
- Date: 03/14/2016 14:02:23 PM
+ Date: 03/17/2016 15:33:59 PM
 */
 
 SET NAMES utf8;
@@ -70,14 +70,15 @@ CREATE TABLE `users` (
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `ip_access` varchar(15) DEFAULT NULL,
+  `ip_access_2` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES ('1', '127.0.0.1', 'administrator', '$2y$08$AXOvmFbrc8To3KTP6zhWS.EFE48WuMrNI3A3JNGV26wb/nGksKi8O', '', 'admin@admin.com', '', null, null, null, '1268889823', '1457937078', '1', 'Admin', 'istrator', 'ADMIN', '0', '10.11.22.54'), ('5', '127.0.0.1', null, '$2y$08$Rr4fKdaF.XjSSMet0ypsbu0Adp3DznwYlioPpA00aQ1hnc9/FKPVu', null, 'nguyenanhnhan@vanlanguni.edu.vn', null, null, null, null, '1457936874', '1457937055', '1', 'Nguyễn Ảnh', 'Nhân', null, null, '10.11.22.54');
+INSERT INTO `users` VALUES ('1', '127.0.0.1', 'administrator', '$2y$08$AXOvmFbrc8To3KTP6zhWS.EFE48WuMrNI3A3JNGV26wb/nGksKi8O', '', 'admin@admin.com', '', null, null, null, '1268889823', '1458203485', '1', 'Admin', 'istrator', 'ADMIN', '0', '125.234.238.130', '113.161.93.15'), ('5', '127.0.0.1', null, '$2y$08$Rr4fKdaF.XjSSMet0ypsbu0Adp3DznwYlioPpA00aQ1hnc9/FKPVu', null, 'nguyenanhnhan@vanlanguni.edu.vn', null, null, null, null, '1457936874', '1458203418', '1', 'Nguyễn Ảnh', 'Nhân', null, null, '125.234.238.130', '113.161.93.15'), ('6', '127.0.0.1', null, '$2y$08$iUAGItI6ksHKG9c5n9ibHuSXD18o2EVKZhz.E9xwCoTHHOU4EqHuq', null, 'nguyenthanhtruc@mail.com', null, null, null, null, '1457946657', null, '1', 'Nguyễn Thanh', 'Trúc', null, null, '', null);
 COMMIT;
 
 -- ----------------------------
@@ -94,13 +95,13 @@ CREATE TABLE `users_groups` (
   KEY `fk_users_groups_groups1_idx` (`group_id`),
   CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `users_groups`
 -- ----------------------------
 BEGIN;
-INSERT INTO `users_groups` VALUES ('1', '1', '1'), ('2', '1', '2'), ('6', '5', '2');
+INSERT INTO `users_groups` VALUES ('1', '1', '1'), ('2', '1', '2'), ('6', '5', '2'), ('7', '6', '2');
 COMMIT;
 
 -- ----------------------------
@@ -117,13 +118,13 @@ CREATE TABLE `work_time` (
   `modified_by` varchar(50) DEFAULT NULL,
   `modified_date` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `work_time`
 -- ----------------------------
 BEGIN;
-INSERT INTO `work_time` VALUES ('12', '1', '1457889985', '', 'Admin istrator', '1457889985', null, null), ('13', '5', '1457937059', '', 'Nguyen Anh Nhan', '1457937059', null, null);
+INSERT INTO `work_time` VALUES ('12', '1', '1457889985', '', 'Admin istrator', '1457889985', null, null), ('13', '5', '1457937059', '', 'Nguyen Anh Nhan', '1457937059', null, null), ('14', '1', '1458100062', '', 'Admin istrator', '1458100062', null, null), ('15', '5', '1458203293', '', 'Nguyễn Ảnh Nhân', '1458203293', null, null);
 COMMIT;
 
 -- ----------------------------
@@ -140,13 +141,13 @@ CREATE TABLE `work_time_detail` (
   `modified_by` varchar(50) DEFAULT NULL,
   `modified_date` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `work_time_detail`
 -- ----------------------------
 BEGIN;
-INSERT INTO `work_time_detail` VALUES ('1', '12', '1457889985', '1457892082', 'Admin istrator', '1457889985', 'Admin istrator', '1457892082'), ('2', '12', '1457892069', '1457892082', 'Admin istrator', '1457892069', 'Admin istrator', '1457892082'), ('3', '12', '1457892421', '1457892482', 'Admin istrator', '1457892421', 'Admin istrator', '1457892482'), ('4', '12', '1457893660', '1457894921', 'Admin istrator', '1457893660', 'Admin istrator', '1457894921'), ('5', '13', '1457937059', null, 'Nguyen Anh Nhan', '1457937059', null, null);
+INSERT INTO `work_time_detail` VALUES ('1', '12', '1457889985', '1457892082', 'Admin istrator', '1457889985', 'Admin istrator', '1457892082'), ('2', '12', '1457892069', '1457892082', 'Admin istrator', '1457892069', 'Admin istrator', '1457892082'), ('3', '12', '1457892421', '1457892482', 'Admin istrator', '1457892421', 'Admin istrator', '1457892482'), ('4', '12', '1457893660', '1457894921', 'Admin istrator', '1457893660', 'Admin istrator', '1457894921'), ('5', '13', '1457937059', null, 'Nguyen Anh Nhan', '1457937059', null, null), ('6', '14', '1458100062', '1458103518', 'Admin istrator', '1458100062', 'Admin istrator', '1458103518'), ('7', '15', '1458203293', null, 'Nguyễn Ảnh Nhân', '1458203293', null, null);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

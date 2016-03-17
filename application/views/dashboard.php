@@ -43,7 +43,7 @@
                     </div>
                     <?php } ?>
                     <form action="<?php echo base_url('work_time/check') ?>" method="POST">
-                        <?php if ($current_user->ip_access == $localIP) { ?>
+                        <?php if ($current_user->ip_access == $localIP || $current_user->ip_access_2 == $localIP) { ?>
                         <div class="alert alert-info">
                             Ngày <strong><?php echo date("d/m/Y") ?></strong>
                             <?php if ($check_in == FALSE) {?>

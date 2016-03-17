@@ -70,6 +70,10 @@
                                 <label class="control-label"> Địa chỉ IP khả dụng </label>
                                 <input type="text" placeholder="" class="form-control" name="ip_access" value="<?php echo $user->ip_access ?>" /> 
                             </div>
+                            <div class="form-group">
+                                <label class="control-label"> Địa chỉ IP khả dụng phụ </label>
+                                <input type="text" placeholder="" class="form-control" name="ip_access_2" value="<?php echo $user->ip_access_2 ?>" />
+                            </div>
                             <div class="margiv-top-10">
                                 <button type="submit" class="btn green"> Cập nhật </button>
                                 <!-- <a href="" class="btn green"> Cập nhật </a> -->

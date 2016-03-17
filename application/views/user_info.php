@@ -72,6 +72,10 @@
                                 <label class="control-label"> Địa chỉ IP khả dụng </label>
                                 <input type="text" placeholder=" xxx.xxx.xxx.xxx " class="form-control" name="ip_access" id="ip_access" /> 
                             </div>
+                            <div class="form-group">
+                                <label class="control-label"> Địa chỉ IP khả dụng phụ </label>
+                                <input type="text" placeholder=" xxx.xxx.xxx.xxx " class="form-control" name="ip_access_2" id="ip_access_2" /> 
+                            </div>
                             <div class="margiv-top-10">
                                 <button type="submit" value="save_n_next" name="submit" class="btn green"> Lưu và tiếp tục tạo mới </button>
                                 <button type="submit" value="save_n_close" name="submit" class="btn blue"> Lưu và thoát </button>

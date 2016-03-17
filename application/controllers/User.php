@@ -78,11 +78,13 @@ class User extends CI_Controller {
 				$first_name = $this->input->post('first_name');
 				$last_name = $this->input->post('last_name');
 				$ip_access = $this->input->post('ip_access');
+				$ip_access_2 = $this->input->post('ip_access_2');
 
 				$data = array(
 						'first_name' => $first_name,
 						'last_name' => $last_name,
-						'ip_access' => $ip_access
+						'ip_access' => $ip_access,
+						'ip_access_2' => $ip_access_2
 					);
 
 				$this->ion_auth->update($user_id,$data);
@@ -105,11 +107,13 @@ class User extends CI_Controller {
 				$first_name = $this->input->post('first_name');
 				$last_name = $this->input->post('last_name');
 				$ip_access = $this->input->post('ip_access');
+				$ip_access_2 = $this->input->post('ip_access_2');
 
 				$data = array(
 						'first_name' => $first_name,
 						'last_name' => $last_name,
-						'ip_access' => $ip_access
+						'ip_access' => $ip_access,
+						'ip_access_2' => $ip_access_2
 					);
 
 				$this->ion_auth->update($user_id,$data);
@@ -182,7 +186,8 @@ class User extends CI_Controller {
 				$additional_data = array(
 						'first_name'=>$this->input->post('first_name'),
 						'last_name'=>$this->input->post('last_name'),
-						'ip_access'=>$this->input->post('ip_access')
+						'ip_access'=>$this->input->post('ip_access'),
+						'ip_access_2' => $this->input->post('ip_access_2')
 					);
 
 				$this->ion_auth->register($username,$password,$email,$additional_data);

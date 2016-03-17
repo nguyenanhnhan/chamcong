@@ -74,6 +74,14 @@
                                 <input type="text" placeholder="" class="form-control" name="ip_access" value="<?php echo $current_user->ip_access ?>" readonly /> 
                                 <?php } ?>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label"> Địa chỉ IP khả dụng phụ</label>
+                                <?php if ($is_admin) { ?>
+                                <input type="text" placeholder="" class="form-control" name="ip_access_2" value="<?php echo $current_user->ip_access_2 ?>" /> 
+                                <?php }else { ?>
+                                <input type="text" placeholder="" class="form-control" name="ip_access_2" value="<?php echo $current_user->ip_access_2 ?>" readonly /> 
+                                <?php } ?>
+                            </div>
                             <div class="margiv-top-10">
                                 <button type="submit" class="btn green"> Cập nhật </button>
                                 <!-- <a href="" class="btn green"> Cập nhật </a> -->
